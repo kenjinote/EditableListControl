@@ -35,6 +35,9 @@ LRESULT CALLBACK listviewEditProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 			}
 		}
 		break;
+	//通常は必要ないがダイアログにリストビューを配置する場合は下記の2行が必要
+	//case WM_GETDLGCODE:
+	//	return DLGC_WANTALLKEYS;
 	case WM_CHAR:
 		if (wParam == VK_RETURN) {
 			SendMessage(hWnd, WM_APP, 0, 0);
